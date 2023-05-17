@@ -4,16 +4,16 @@
     "version": "1.0",
     "browser_action": {
       "default_icon": {
-        "16": "icons/icon16.png",
-        "48": "icons/icon48.png",
-        "128": "icons/icon128.png"
+        "16": "imagens/sound16.xcf",
+        "48": "imagens/sound48.xcf",
+        "128": "imagens/sound128.xcf"
       },
       "default_popup": "clearsound.html"
     },
     "icons": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
+      "16": "imagens/sound16.xcf",
+      "48": "imagens/sound48.xcf",
+      "128": "imagens/sound128.xcf"
     },
     "permissions": [
       "activeTab",
