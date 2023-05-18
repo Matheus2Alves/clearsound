@@ -13,14 +13,14 @@
         <h1><span class="clear">Clear</span>Sound</h1>
         <label for="volumegerador">controle seu volume aqui, de acordo com a sua preferência!!</label>
         <input type="range" id="volumegerador" min="0" max="100" step="0.1">
-        <p id="volumevalor"></p>
+        <p id="volumevalor">db</p>
         <a href="#">teste sua sensibilidade sensorial</a>
         <script>
             const rangeInput = document.getElementById('volumegerador');
             const rangeValue = document.getElementById('volumevalor');
 
             rangeInput.addEventListener('input', function() {
-            rangeValue.textContent = rangeInput.value;
+            rangeValue.textContent = `${rangeInput.value} db`;
             });
         </script>
     </div>
