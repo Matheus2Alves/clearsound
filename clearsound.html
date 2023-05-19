@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
+    <script src="clearsound.js"></script>
     <div class="menu">
         <h1><span class="clear">Clear</span>Sound</h1>
         <label for="volumegerador">controle seu volume aqui, de acordo com a sua preferência!!</label>
@@ -25,4 +26,38 @@
         </script>
     </div>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearSound</title>
+    <link rel="stylesheet" href="clearsound.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <script src="clearsound.js"></script>
+    <div class="menu">
+        <h1><span class="clear">Clear</span>Sound</h1>
+        <label for="volumegerador">Controle o volume aqui, de acordo com a sua preferência!!</label>
+        <input type="range" id="volumegerador" min="0" max="100" step="1">
+        <p id="volumevalor">0 db</p>
+        <a href="#">Teste sua sensibilidade sensorial</a>
+        <script>
+            const rangeInput = document.getElementById('volumegerador');
+            const rangeValue = document.getElementById('volumevalor');
+
+            rangeInput.addEventListener('input', function() {
+                rangeValue.textContent = `${rangeInput.value} db`;
+
+                var volume = parseFloat(rangeInput.value) / 100;
+                chrome.runtime.sendMessage({ volume: volume });
+            });
+        </script>
+    </div>
+</body>
 </html>
+

@@ -1,22 +1,29 @@
 {
-    "manifest_version": 2,
-    "name": "Minha Extensão",
-    "version": "1.0",
-    "browser_action": {
-      "default_icon": {
-        "16": "imagens/sound16.xcf",
-        "48": "imagens/sound48.xcf",
-        "128": "imagens/sound128.xcf"
-      },
-      "default_popup": "clearsound.html"
-    },
-    "icons": {
-      "16": "imagens/sound16.xcf",
-      "48": "imagens/sound48.xcf",
-      "128": "imagens/sound128.xcf"
-    },
-    "permissions": [
-      "activeTab",
-      "tabs"
-    ]
+  "manifest_version": 2,
+  "name": "ClearSound",
+  "version": "1.0",
+  "description": "Extensão para controle de volume de mídia",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "browser_action": {
+    "default_popup": "clearsound.html",
+    "default_icon": {
+      "16": "./imagens/planta16.jpg",
+      "48": "./imagens/planta48.jpg",
+      "128": "./imagens/planta128.jpg"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["clearsound.js"]
+    }
+  ],
+  "icons": {
+    "16": "./imagens/planta16.jpg",
+    "48": "./imagens/planta48.jpg",
+    "128": "./imagens/planta128.jpg"
   }
+}
